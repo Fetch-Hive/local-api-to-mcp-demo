@@ -1,0 +1,12 @@
+# The tracker listens on 0.0.0.0 inside the container. The published port is
+# bound to 127.0.0.1 on the host, so other machines cannot connect.
+services:
+  tracker:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - issue-data:/app/data
+
+volumes:
+  issue-data:

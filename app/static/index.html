@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Local Issue Tracker</title>
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <div class="page">
+      <header class="top">
+        <div class="identity">
+          <div class="title-row">
+            <h1>Local Issue Tracker</h1>
+            <span class="demo-badge">Demo API</span>
+          </div>
+          <p class="host">Running locally on 127.0.0.1:8000</p>
+        </div>
+        <nav class="links" aria-label="API documents">
+          <a class="button" href="/docs">Docs</a>
+          <a class="button" href="/openapi.json">openapi.json</a>
+        </nav>
+      </header>
+
+      <section class="summary" aria-label="Issue counts">
+        <article class="card">
+          <h2>Total</h2>
+          <p id="count-total">–</p>
+        </article>
+        <article class="card">
+          <h2>Open</h2>
+          <p id="count-open">–</p>
+        </article>
+        <article class="card">
+          <h2>In progress</h2>
+          <p id="count-in-progress">–</p>
+        </article>
+        <article class="card">
+          <h2>Resolved</h2>
+          <p id="count-resolved">–</p>
+        </article>
+      </section>
+
+      <section class="panel" aria-labelledby="issues-heading">
+        <div class="panel-head">
+          <h2 id="issues-heading">Issues</h2>
+          <p>Newest first</p>
+        </div>
+        <p id="loading" class="state">Loading issues…</p>
+        <p id="error" class="state state-error" hidden role="alert">
+          Could not load issues from /api/issues. This page tries again every 2 seconds.
+        </p>
+        <p id="empty" class="state" hidden>
+          No issues yet. Create one with the API and it will show up here.
+        </p>
+        <div id="table-wrap" class="table-wrap" hidden>
+          <table>
+            <caption class="sr-only">Issues, newest first</caption>
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Priority</th>
+                <th scope="col">Status</th>
+                <th scope="col">Created</th>
+              </tr>
+            </thead>
+            <tbody id="issue-rows"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <p id="live" class="sr-only" aria-live="polite"></p>
+    <noscript>
+      <p class="noscript">This page refreshes the issue list with JavaScript.</p>
+    </noscript>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>

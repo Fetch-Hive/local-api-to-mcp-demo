@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Screenshot placeholder">
+  <rect width="1200" height="675" fill="#e7ebf0"/>
+  <rect x="80" y="70" width="1040" height="535" rx="18" fill="#ffffff" stroke="#d5dde6"/>
+  <text x="600" y="310" text-anchor="middle" fill="#243044" font-family="system-ui, sans-serif" font-size="36" font-weight="700">Screenshot placeholder</text>
+  <text x="600" y="362" text-anchor="middle" fill="#4d5c6b" font-family="ui-monospace, monospace" font-size="22">Local Issue Tracker at http://127.0.0.1:8000</text>
+</svg>
